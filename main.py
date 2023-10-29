@@ -13,7 +13,7 @@ files = ['a', 'b']
 inputFolderName = 'input'
 
 
-def output(topImgPath, bottomImgPath):
+def output(folder, topImgPath, bottomImgPath):
     print(topImgPath + ' ' + bottomImgPath)
 
     new_im = Image.new('RGBA', (640, 633))
@@ -29,7 +29,7 @@ def output(topImgPath, bottomImgPath):
 
     new_im.paste(cover, (0,0), cover)
 
-    new_im.save(folder + '_final.png')
+    new_im.save(folder + '/boxFront.png')
 
 
 for filename in os.listdir(inputFolderName):
@@ -56,7 +56,7 @@ for filename in os.listdir(inputFolderName):
                         bottomImgPath = imgPath
                         # print(cand)
                         if(topImgPath != ""):
-                            output(topImgPath, bottomImgPath)
+                            output(folder, topImgPath, bottomImgPath)
                             break
                         # else:
                         #     continue
